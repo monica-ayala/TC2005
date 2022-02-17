@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang = "es">
-
 <head>
 	<meta charset="utf-8">
-	<title> Lab 3 - mi página personal con CSS </title>
+	<title> Lab 1 - mi página personal </title>
 	
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-	<link rel="stylesheet" type="text/css" href="styles.css">
 
 	<style>
 		body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-		body {font-size:16px;background-color: #eec2fc}
+		body {font-size:16px;background-color: #edf2f7}
 		.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 		.w3-half img:hover{opacity:1}
+		details summary {cursor: pointer;}
+		summary {
+  display: block;
+
+}
+
+summary::after {
+  margin-left: 1ch;
+  display: inline-block;
+  transition: 0.2s;
+  content: 	"🌺"; /* chevron */}
+
+
+details[open] summary::after {
+  transform: rotate(90deg);}
+
 	</style>
 </head>
-
 <body>
 
-	<nav class="w3-sidebar w3-rgb(190, 149, 152) w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;background-color: white;">
+	<nav class="w3-sidebar w3-rgb(190, 149, 152) w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;background-color: white">
 	<header> Mónica Andrea Ayala Marrero </header>
-	<section> A01707439</section>
-	<section> a01707439@tec.mx</section>
+	<section style = "color: blue"> A01707439</section>
+	<section style = "color: blue"> a01707439@tec.mx</section>
 	<br>
-	<aside> Tengo un poco de experiencia en diseño de front end y gestión de proyectos. Manejo lo básico de lenguajes como python, c++, c#, javascript. Mi compromiso es dar todo mi esfuerzo en el proyecto del socioformador y aprender lo más posible durante este curso. Mis expectativas son aprender a trabajar en un proyecto más acercado a la realidad del ambiente laboral y poder utilizar las habilidades aprendidas en mi vida fuera de clase. </aside>
+	<aside style = "text-align: justify"> Tengo un poco de experiencia en diseño de front end y gestión de proyectos. Manejo lo básico de lenguajes como python, c++, c#, javascript. Mi compromiso es dar todo mi esfuerzo en el proyecto del socioformador y aprender lo más posible durante este curso. Mis expectativas son aprender a trabajar en un proyecto más acercado a la realidad del ambiente laboral y poder utilizar las habilidades aprendidas en mi vida fuera de clase. </aside>
 </nav>
-	<h2> Laboratorio 3 : CSS</h2>
-	<div id="content" class="w3-main">
-		<ul><h1><b> Preguntas y respuestas HTML </b></h1>
-		 
-
+	<h2 style="margin-left:340px;margin-right:40px;"> Laboratorio 1 : Introducción a las aplicaciones web, HTML5 y ciclo de vida de los sistemas de información</h2>
+	<div class="w3-main" style="margin-left:300px;margin-right:40px;">
+	
+	<ul style="list-style: none" > <h1 style="font-size: 45px"><b> Preguntas y respuestas </b></h1>
 		<li> 
 			<details>
 			<summary> ¿Cuál es la diferencia entre Internet y la World Wide Web? </summary>
@@ -51,14 +63,14 @@
 			<details>
 			<summary> ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE? </summary> <!-- https://www.ionos.es/digitalguide/hosting/cuestiones-tecnicas/http-request/#:~:text=GET%20es%20la%20madre%20de,archivo%20HTML%2C%20del%20servidor%20web.&text=El%20servidor%20enviar%C3%ADa%20el%20archivo,html%20como%20respuesta. -->
 
-			<p> 
-				<b>GET :</b> solicita un recurso del servidor web <br>
-				<b>HEAD :</b>  solicita solo el encabezado, sin el archivo <br>
-				<b>POST :</b>  sirve para enviar al servidor web paquetes grandes de datos, adjuntandose en el encabezado html <br>
-				<b>PUT :</b>  modifica todo el recurso completo <br>
-				<b>PATCH :</b> modifica parte de un recurso <br>
-				<b>DELETE :</b> eliminar un recurso <br>
-			</p>
+			<p> <ul>
+				<li> GET : solicita un recurso del servidor web </li>
+				<li> HEAD :  solicita solo el encabezado, sin el archivo </li>
+				<li> POST :  sirve para enviar al servidor web paquetes grandes de datos, adjuntandose en el encabezado html </li>
+				<li> PUT :  modifica todo el recurso completo </li>
+				<li> PATCH : modifica parte de un recurso </li>
+				<li> DELETE : eliminar un recurso </li>
+			</ul></p>
 			</details>	
 		</li>
 
@@ -135,55 +147,10 @@
 			</details>	
 		</li>
 
-	</ul>
-
-		
-	<ul>
-	<h1><b> Preguntas y respuestas CSS </b></h1>
-
-	
-
-		<li> 
-			<details>
-			<summary>  Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </summary>
-
-			<p> Esto no debería de hacerse normalmente, se debería tener una buena estructura en el CSS, con clases, ids y otros selectores para jerarquizar correctamente los estilos de la página, que eviten la necesidad de utilizar el !important. </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary> Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado? </summary>
-
-			<p> Al escoger una imagen de fondo en una página de HTML debemos cuidar el tamaño de la imagen, ya que puede que se muestre pixeleada si hacemos que ocupe más espacio en la pantalla del de su tamaño, también debemos prestar atención a las proporciones (largo y ancho) de la imágen para que esta pueda acoplarse correctamente a nuestro sitio web. </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary> Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</summary>
-
-			<p> <b>Px - pixeles -</b> no es una buena unidad de medida ya que dependerá de la resolución de cada pantalla y de la configuración que tenga el usuario en su navegador.<br>
-
-			<b>% - porcentajes -</b> es una buena medida ya que se acopla cuando cambiamos el tamaño de la ventana. Nos puede ayudar a que se mantengan las proporciones incluso en computadoras de distinto tamaño de pantalla, resolución y configuración.<br>
-
-			<b>Pt - puntos -</b> es similar a los pixeles, siendo una medida fija que no escala con tamaño. Son buenos para medios impresos pero no tanto para páginas web, ya que los resultados varían mucho de usuario en usuario según su comutadora, ajustes y navegador. </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary> ¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio? </summary>
-
-			<p> Utilizando una versión minimizada del CSS (donde se eliminan todos los comentarios, espacios en blanco y saltos de linea), podemos lograr que el código corra de manera más óptima, mejorando los tiempos de carga de tu página web </p>
-			</details>	
-		</li> 
-
 	
 	</ul>
-		
 
-	<footer> hecho en sublime text 3 </footer>
+	<footer style= "position: fixed;left: 0;bottom: 0;width: 100%;text-align: right;"> powered by sublime text 3 </footer>
 	
 </div>
 </body>
