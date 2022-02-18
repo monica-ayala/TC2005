@@ -1,157 +1,47 @@
 <!DOCTYPE html>
-<html lang = "es">
-<head>
-	<meta charset="utf-8">
-	<title> Lab 1 - mi página personal </title>
-	
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 
-	<style>
+<html lang="es">
+	<title>Mi blog</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+	<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=0SQQ86-FyQc3tto9GBCAVX8o1uC6ETcwYtH6TYzdnm7YmcxFBs3O-PbPVi47YWhuDzayyiZ1BF0Pmgb60k924g" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tb25pY2EtYXlhbGEuZ2l0aHViLmlvL01pX2Jsb2cvYmxvZw"/><style>
 		body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-		body {font-size:16px;background-color: #edf2f7}
+		body {font-size:16px;}
 		.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 		.w3-half img:hover{opacity:1}
-		details summary {cursor: pointer;}
-		summary {
-  display: block;
-
-}
-
-summary::after {
-  margin-left: 1ch;
-  display: inline-block;
-  transition: 0.2s;
-  content: 	"🌺"; /* chevron */}
-
-
-details[open] summary::after {
-  transform: rotate(90deg);}
-
 	</style>
-</head>
-<body>
 
-	<nav class="w3-sidebar w3-rgb(190, 149, 152) w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;background-color: white">
-	<header> Mónica Andrea Ayala Marrero </header>
-	<section style = "color: blue"> A01707439</section>
-	<section style = "color: blue"> a01707439@tec.mx</section>
-	<br>
-	<aside style = "text-align: justify"> Tengo un poco de experiencia en diseño de front end y gestión de proyectos. Manejo lo básico de lenguajes como python, c++, c#, javascript. Mi compromiso es dar todo mi esfuerzo en el proyecto del socioformador y aprender lo más posible durante este curso. Mis expectativas son aprender a trabajar en un proyecto más acercado a la realidad del ambiente laboral y poder utilizar las habilidades aprendidas en mi vida fuera de clase. </aside>
-</nav>
-	<h2 style="margin-left:340px;margin-right:40px;"> Laboratorio 1 : Introducción a las aplicaciones web, HTML5 y ciclo de vida de los sistemas de información</h2>
-	<div class="w3-main" style="margin-left:300px;margin-right:40px;">
-	
-	<ul style="list-style: none" > <h1 style="font-size: 45px"><b> Preguntas y respuestas </b></h1>
-		<li> 
-			<details>
-			<summary> ¿Cuál es la diferencia entre Internet y la World Wide Web? </summary>
+	<body>
+		<!-- Menu lateral -->
+		<nav class="w3-sidebar w3-rgb(190, 149, 152) w3-collapse w3-top w3-large w3-padding" style="background-color: rgb(241, 149, 152);z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+			
+		  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Cerrar Menu</a>
+		  
 
-			<p> El internet es la red de computadoras conectadas entre sí, y la World Wide Web es una colección de páginas a las que puedes acceder al conectarte a internet </p>
-			</details>	
-		</li>
+		  <div class="w3-bar-block">
+		    <a href="https://github.com/monica-ayala" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Mis proyectos </a> 
+		    <a href="https://monica-ayala.github.io/TC2005/lab1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Laboratorio 1 </a> 
+		    <a href="https://github.com/monica-ayala/TC2005" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Laboratorio 2</a> 
+		    <a href="https://monica-ayala.github.io/TC2005/lab3" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Laboratorio 3</a> 
+		    <a href="https://monica-ayala.github.io/TC2005/lab4" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Laboratorio 4</a>
+		  </div>
 
-		<li> 
-			<details>
-			<summary>  ¿Cuáles son las partes de un URL? </summary>
+		</nav>
+		<div class="w3-main" style="margin-left:340px;margin-right:40px">
+		<div class="w3-container" id="bombas" style="margin-top:75px">
+		    <h1 class="w3-xxxlarge w3-text" style="color:rgb(241, 149, 152);"><b> Mi presentación </b></h1>
+		    <hr style="width:50px;border:5px solid rgb(241, 149, 152)" class="w3-round">
+		    <p> Mi experiencia: 
+		     Tengo un poco de experiencia en diseño de front end y gestión de proyectos. Manejo lo básico de lenguajes como python, c++, c#, javascript.  </p>
+		    <p>Mis expectativas: Mi compromiso es dar todo mi esfuerzo en el proyecto del socioformador y aprender lo más posible durante este curso. </p>
+		    <p>Mis compromisos: Mis expectativas son aprender a trabajar en un proyecto más acercado a la realidad del ambiente laboral y poder utilizar las habilidades aprendidas en mi vida fuera de clase.
+		    </p>
+		  </div>
+		</div>
+		  
 
-			<p> El protocolo (como http), subdominio, dominio, TLD, ruta, Parámetro, Etiqueta. </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary> ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE? </summary> <!-- https://www.ionos.es/digitalguide/hosting/cuestiones-tecnicas/http-request/#:~:text=GET%20es%20la%20madre%20de,archivo%20HTML%2C%20del%20servidor%20web.&text=El%20servidor%20enviar%C3%ADa%20el%20archivo,html%20como%20respuesta. -->
-
-			<p> <ul>
-				<li> GET : solicita un recurso del servidor web </li>
-				<li> HEAD :  solicita solo el encabezado, sin el archivo </li>
-				<li> POST :  sirve para enviar al servidor web paquetes grandes de datos, adjuntandose en el encabezado html </li>
-				<li> PUT :  modifica todo el recurso completo </li>
-				<li> PATCH : modifica parte de un recurso </li>
-				<li> DELETE : eliminar un recurso </li>
-			</ul></p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary>  ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué? </summary>
-
-			<p> Se debe utilizar el método de POST </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary> Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error? </summary>
-
-			<p> Que la petición fue realizada exitosamente, no ocurrió ningún error. </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary> ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?  </summary>
-			<!-- https://www.inboundcycle.com/diccionario-marketing-online/error-404-->
-			<p> Primeo definamos que es el error 404 para poder entender mejor -> El error 404 es un código de estado que se envía desde el servidor web al navegador, o sea, al usuario que intentaba entrar en dicha página. Básicamente, lo que indica este error es que se trata de un enlace roto, defectuoso o que ya no existe y que, por lo tanto, no es posible navegar por él. Si el enlace es generado automáticamente por la página, es responsabilidad del desarrollador, si el usuario escribió mal el usuario entonces no es responsabilidad del desarrollador. </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary>  ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué? </summary>
-			<!--https://www.webempresa.com/blog/que-es-un-error-500-y-como-localizarlo-en-nuestra-web.html--> 
-
-			<p> Primeo definamos que es el error 500 para poder entender mejor -> El Error 500 - Internal server error, es un código de estado HTTP muy general que significa que algo ha ido mal en el servidor del sitio web, pero el servidor no puede ser más específico sobre cuál es el problema exacto. Esto es completamente responsabilidad del desarrollador, ya que es un error interno </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary>  ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados. </summary>
-
-			<p> Que sí funciona pero ya no se le da seguimiento ni mantenimiento, ya no se debería seguir usando apesar de que funcione </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary>  ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?  </summary>
-
-			<p> HTML4 mezclaba la presentación del sitio (con tags como center), por lo que se decidió que HTML se dedicaría exclusivamente a la estructura del contenido y para la presentación se emplearía exclusivamente CSS </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary>  ¿Qué componentes de estructura y estilo tiene una tabla?  </summary>
-
-			<p> Tanto en HTML4 como HTML5 existe el tag table, tr (table row), td (table data). Sin embargo en HTML5 se incorporan etiquetas semánticas como th (table header) y tfoot (el footer de la tabla). Esto es una ventaja por que el orden de los tags en el código html no importa, dado a que son etiquetas semánticas. </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary>  ¿Cuáles son los principales controles de una forma HTML5? </summary>
-
-			<p> Se creo un elemento input con más capacidades para poder recolectar de mejor manera los datos, manejar errores y validación de errores de mejor manera. Ejemplos: type="number", type="range", type="date", type="color", type="search". Se creo de igual manera el tag datalist, para que al llenar un formulario se pueda obtener una lista de donde el usuario pueda seleccionar una. Se creo también un elemento placeholder para tener un contenido predeterminado en el campo de entrada de datos.   </p>
-			</details>	
-		</li>
-
-		<li> 
-			<details>
-			<summary>  ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Navegador : Chrome </summary>
-
-			<p> El navegador que utilizo, Chrome, soporta 476 elementos de HTML5, siendo la categoría Peer-to-Peer la que más sufre </p>
-			</details>	
-		</li>
-
-	
-	</ul>
-
-	<footer style= "position: fixed;left: 0;bottom: 0;width: 100%;text-align: right;"> powered by sublime text 3 </footer>
-	
-</div>
 </body>
 </html>
