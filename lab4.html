@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang = "es">
+
+<head>
+	<meta charset="utf-8">
+	<title> Lab 4 - Intro a JavaScript </title>
+	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script src="Script.js"></script>
+
+	<style>
+		body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+		body {font-size:16px;background-color: #ffd1a6}
+		.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+		.w3-half img:hover{opacity:1}
+	</style>
+</head>
+
+<body>
+ 
+	<header> Mónica Andrea Ayala Marrero </header>
+	<section> A01707439</section>
+	<section> a01707439@tec.mx</section>
+	
+	<h2> Laboratorio 4 : Fundamentos de JavaScript</h2>
+	<div id="content" class="w3-main">
+		<ul><h1><b> Preguntas y respuestas</b></h1>
+		 
+
+		<li> 
+			<details>
+			<summary> ¿Qué diferencias y semejanzas hay entre Java y JavaScript? </summary>
+
+			<p> Son lenguajes de programación completamente distintos, cuya única similitud se basa en que fueron creados a partir del lenguaje C. Java es un lenguaje compilado, JavaScript es un lenguaje interpretado. Java es puramente un lenguaje Orientado a Objetos y JavaScript está orientado a prototipos. </p>
+			</details>	
+		</li>
+
+		<li> 
+			<details>
+			<summary>  ¿Qué métodos tiene el objeto Date? (Menciona al menos 5*) </summary>
+
+			<p> M
+			Date.getDate() : Devuelve el día del mes según la hora local. <br>
+
+			Date.getDay() : Devuelve el día de la semana según la hora local.  <br>
+
+			Date.getFullYear() : Devuelve el año en formato de cuatro dígitos según la hora local.  <br>
+
+			Date.getHours() : Devuelve la hora según la hora local.  <br>
+
+			Date.getMilliseconds() : Devuelve los milisegundos segÚn la hora local.  <br>
+
+ 			</p>
+
+			</details>	
+		</li>
+
+		<li> 
+			<details>
+			<summary> ¿Qué métodos tienen los arreglos? (Menciona al menos 5*) </summary> 
+			<p> 
+				sort()	: Ordena los elementos del array. Los ordena como strings <br>
+				sort()	: Ordena los elementos del array. Los ordena como strings <br>
+				splice()	: Añade o elimina elementos de un array <br>
+				toString()	: Convierte un array en string y devuelve el resultado(entre comas) <br>
+				unshift()	: Añade elementos al inicio del array y devuelve la nueva longitud <br>
+			</p>
+			</details>	
+		</li>
+
+		<li> 
+			<details>
+			<summary>  ¿Cómo se declara una variable con alcance local dentro de una función? </summary>
+
+			<p> Dentro de las llaves de una función se declará la variable con "var" o nada antes del nombre de la variable </p>
+			</details>	
+		</li>
+
+		<li> 
+			<details>
+			<summary> ¿Qué implicaciones tiene utilizar variables globales dentro de funciones? </summary>
+
+			<p> Al declarar una variable global está podrá ser accesada por todo el código y toda las funciones del mismo, al usar las variables globales dentro de las funciones las sometes a posibles cambios y a usar el último valor asignado/modificado de la variable, no necesariamente aquel que fue declarado inicialmente. </p>
+			</details>	
+		</li>
+	</ul>
+
+	<p> 1: Entrada: un número pedido con un prompt. Salida: Una tabla con los números del 1 al número dado con sus cuadrados y cubos. Utiliza document.write para producir la salida </p>
+
+	<button onclick="potencias()">Probar</button>
+
+	<p id="demo"></p>
+
+	<p> 2: Entrada: Usando un prompt se pide el resultado de la suma de 2 números generados de manera aleatoria. Salida: La página debe indicar si el resultado fue correcto o incorrecto, y el tiempo que tardó el usuario en escribir la respuesta. </p>
+
+	<button onclick="suma()">Probar</button>
+	<p id="instrucción"></p>
+	<p id="suma"></p>
+
+	<p> 3: Función: contador. Parámetros: Un arreglo de números. Regresa: La cantidad de números negativos en el arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo. </p>
+
+	<button onclick="negativos()">Probar</button>
+	<p id="negativos"></p>
+
+	<p> 4: Función: promedios. Parámetros: Un arreglo de arreglos de números. Regresa: Un arreglo con los promedios de cada uno de los renglones de la matriz. </p>
+		
+	<button onclick="promedios()">Probar</button>
+	<p id="promedios"></p>
+
+	<p> 5: Función: inverso. Parámetros: Un número. Regresa: El número con sus dígitos en orden inverso. </p>
+
+	<button onclick="inverso()">Probar</button>
+	<p id="inverso"></p>
+
+	<p> 6: Entrada: un número. Salida: el resultado de sacarle el seno al número ingresado. Abajo se visualiza una función seno </p>
+
+	<button onclick="problema()">Probar</button>
+	<p id="problema"></p>
+	<canvas id="myChart" style="width:50%;max-width:600px"></canvas>
+	<footer> hecho en sublime text 3 </footer>
+	
+</div>
+<script>
+
+	var xValues = [];
+	var yValues = [];
+
+	function generateData(value, i1, i2, step = 1) {
+	  	for (let x = i1; x <= i2; x += step) {
+	    yValues.push(eval(value));
+	    xValues.push(x);
+	  }
+	}
+	generateData("Math.sin(x)",0,10,0.5);
+	new Chart("myChart", {
+	  type: "line",
+	  data: {
+	    labels: xValues,
+	    datasets: [{
+	      fill: false,
+	      pointRadius: 0,
+	      borderColor: "rgba(0,0,255,0.5)",
+	      data: yValues
+	    }]
+	  },   
+	  options: {
+	    scales: {
+	        xAxes: [{
+	            ticks: {
+	                display: false //this will remove only the label
+	            }
+	        }]
+	    },
+	    title: {
+	      display: true,
+	      text: "y = sin(x)",
+	      fontSize: 16
+	    },
+	    legend: {
+	    	display:false
+	    }
+	 } 
+	  
+	});
+
+</script>
+
+</body>
+</html>
