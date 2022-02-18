@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Material Design</h1>
+  <p>Laboratorio 5: Frameworks (Bootstrap)</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>¿Qué es "Material Design"?</h3>
+      <p>Material Design es un lenguaje visual que sintetiza los principios clásicos del buen diseño con la innovación de la tecnología y la ciencia</p>
+      <p>Material Design es un sistema de diseño creado por Google con el fin de ser capaz de adaptarse a múltiples dispositivos y plataformas.</p>
+      <p>
+      La idea de Google es la de incorporar este sistema de coherencia estética y funcional de forma progresiva a todos sus productos, incluyendo las aplicaciones web y móviles, con la finalidad de crear una experiencia similar en todas sus plataformas.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Características Principales</h3>
+      <p> - Pensado en la realidad: La existencia y la interacción de los objetos en el espacio son transmitidas a través de los principios de la luz, la superficie y el movimiento. En el mundo real, los objetos tienen sombras que indican la dirección del movimiento y la distancia entre las superficies. Este efecto de relieve en los elementos, ayuda a transmitir a simple vista que hay niveles diferentes de lectura </p>
+      <p> - La experiencia de usuario y animación de elementos. Como decíamos, es el usuario quien inicia el movimiento y transforma el entorno con sus acciones. Cuando se mueven y se transforman los objetos, sus transiciones permanecen coherentes, lo que asegura la continuidad de la experiencia.</p>
+      <p> - Importancia de la jerarquía y la lectura visual, como decíamos sobre sus bases en el diseño editorial, a través de técnicas de diseño como el uso del color, el espacio en blanco, jerarquías tipográficas y el sistema de grid.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Implementación</h3>        
+      <p>A partir de 2015 la mayoría de las aplicaciones móviles de Google para Android se había aplicado el nuevo lenguaje de diseño, incluyendo Gmail, YouTube, Google Drive, Google Docs, Sheets and Slides, Google Maps, Inbox, todas las aplicaciones de Google Play con la marca, y una más pequeña medida el navegador Chrome y Google Keep. El escritorio de una interfaz web de Google Drive, Docs, Sheets, diapositivas y la bandeja de entrada lo han incorporado también.</p>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<div class="jumbotron text-center" style=" background-color: #ffeea1;">
+  <h2 style="color:black;">Ejemplos con Bootstrap<h2> 
+</div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <h2>Probar estilos de botones</h2>
+          <button type="button" class="btn">Basic</button>
+          <button type="button" class="btn btn-default">Default</button>
+          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-success">Success</button>
+          <button type="button" class="btn btn-info">Info</button>
+          <button type="button" class="btn btn-warning">Warning</button>
+          <button type="button" class="btn btn-danger">Danger</button>
+          <button type="button" class="btn btn-link">Link</button>    
+        </div>  
+
+        <div class="col-sm-4">
+          <h2>Probar estilos de alerta</h2>
+              <div class="alert alert-success">
+                <strong>Success!</strong> This alert box could indicate a successful or positive action.
+              </div>
+              <div class="alert alert-info">
+                <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+              </div>
+              <div class="alert alert-warning">
+                <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+              </div>
+              <div class="alert alert-danger">
+                <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+              </div>
+        </div>
+
+        <div class="col-sm-4">
+          <h2>Probar lista de items</h2>
+            <div class="list-group">
+              <a href="#" class="list-group-item">First item</a>
+              <a href="#" class="list-group-item">Second item</a>
+              <a href="#" class="list-group-item">Third item</a>
+            </div>    
+        </div>
+    </div>
+</div>
+
+ <div class="container">
+      <div class="row">
+
+        <div class="col-sm-4">
+          <h3>Probar menu </h3>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">Menu 1</a></li>
+    <li><a href="#">Menu 2</a></li>
+    <li><a href="#">Menu 3</a></li>
+  </ul> 
+        </div>
+
+        <div class="col-sm-4">
+          <h2>Probar tablas</h2>
+       
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+        </div>
+
+        <div class="col-sm-4">
+          <h1>Probar tipografía de código</h1>
+           <code> string str = "Hello World"; <br> 
+           console.log(str); </code> 
+        </div>
+      </div>
+</div>
+
+
+
+
+</body>
+</html>
