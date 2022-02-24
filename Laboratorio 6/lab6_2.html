@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CUTE BEER </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+    .cont-jm{
+      height: 200px;
+      position: relative;
+      border-bottom-color: pink;
+      border-bottom : 3px solid pink;
+    }
+     .jumbomini{
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+     }
+    
+    .panel-footer{
+      text-align: center;
+    }
+    .panel-heading{
+      text-align: center;
+      background-color: pink;
+    }
+
+    .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#empresa">Quienes somos</a></li>
+        <li><a href="#empresa">Misión</a></li>
+        <li><a href="#empresa">Diferenciador</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="lab6_1.html"><span class="glyphicon glyphicon-user"></span> Ingresar </a></li>
+        <li><button id="carrito"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito </button></li>
+        <li><a href="lab6_questions.html" class="btn btn-info btn-lg" style="color: white">
+          <span class="glyphicon glyphicon-question-sign"></span> Preguntas
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="empresa" class="cont-jm">
+  <div class="jumbomini">
+      <h2> Nuestra Empresa </h2>
+  </div>
+</div>
+  <br>
+  <br>
+  <br>
+
+<div class="carousel">
+  <div class="container text-center">
+    
+    <div class="col-sm-4">
+      <h3> ¿Quiénes Somos? </h3>
+      <br>
+      <p style="text-align: left;"> Somos una empresa localizada en México, dedicada a la venta de cerveza bonita a un precio accesible. Fuimos fundados el 21 de febrero de 2022 cuando nuestro co-CEO R. Muñoz nos sugirió una página web para la venta de cervezas. Para obtener nuestros productos hicimos una extensa cadena de suministro que recorre varios puntos internacionales </p>
+      <br>
+    </div>
+    <div class="col-sm-4">
+      <h3> Misión </h3>
+      <br>
+      <p style="text-align: left;"> Nuestra misión como empresa es proveer la cerveza bonita de más alta cálidad para todos nuestros usuarios. Queremos que la accesibilidad a cervezas artesanales rosadas mejore, nos comprometemos a ofrecer productos de la más alta calidad. Nuestros valores: honestidad, ética, responsabilidad, excelencia. </p>
+      <br>
+    </div>
+    <div class="col-sm-4">
+      <h3> ¿Qué nos diferencia? </h3>
+      <br>
+      <p style="text-align: left;"> Todas las otras marcas y tiendas de cerveza venden cerveza no tan rica y, sobretodo, nada creativa en su empaque y delicioso sabor. Nuestras cervezas son todas originales, de cálidad, hermosas y deliciosas. Con nosotros podrás encontrar la verdadera nirvana de la cerveza </p>
+      <br>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Agregar productos al carrito</p>
+    <input type="text" value="1" id="cant"> 
+  </div>
+</div>
+
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close2">&times;</span>
+    <p>Total de compra:</p>
+    <div id="resultado"> RESULTADO </div>
+  </div>
+</div>
+<!-- End Modal --> 
+
+  <div id="products" class="cont-jm">
+    <div class="jumbomini">
+        <h2> Nuestros Productos</h2>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel">
+        <div class="panel-heading">Pink Budweiser Beer</div>
+        <div class="panel-body"><img src="https://images.squarespace-cdn.com/content/v1/5a95d934b98a7840d54054e7/1555334753608-3HFUACBP76FW6BAXUNO1/queenofbeer3.jpg?format=2500w" class="img-responsive" style="width:400px;height:400px" alt="Image"></div>
+        <div class="panel-footer"> <div> 130 pesos c/u </div> <button id="1" onClick="reply_click(this.id)"  type="button" class="submit"> Añadir a carrito </button> </div> 
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel">
+        <div class="panel-heading">Urban Naut Beer</div>
+        <div class="panel-body"><img src="https://cdn.shopify.com/s/files/1/2610/5096/products/9421035770743_740x.png?v=1635401370" class="img-responsive" style="width:400px;height:400px" alt="Image"></div>
+        <div class="panel-footer"> <div> 78 pesos c/u </div> <button id="2" onClick="reply_click(this.id)" class="submit" type="button"> Añadir a carrito </button> </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel">
+        <div class="panel-heading">Carlsburg Red Beer</div>
+        <div class="panel-body"><img src="https://p2d7x8x2.stackpathcdn.com/content/uploads/2019/04/thumbnail_CRB-cut-out2-e1556195321225-530x640.png" class="img-responsive" style="width:400px;height:400px" alt="Image"></div>
+        <div class="panel-footer"> <div> 75 pesos c/u <div> <button id="3" class="submit" onClick="reply_click(this.id)"  type="button"> Añadir a carrito </button> </div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel">
+        <div class="panel-heading">Budweiser White Beer</div>
+        <div class="panel-body"><img src="https://images.squarespace-cdn.com/content/v1/5a95d934b98a7840d54054e7/1555334753221-YP114939NWT6XRTZRYWX/queenofbeer2.jpg?format=2500w" class="img-responsive" style="width:400px;height:400px" alt="Image"></div>
+        <div class="panel-footer"> <div> 150 pesos c/u </div> <button id="4" onClick="reply_click(this.id)" class="submit" type="button"> Añadir a carrito </button> </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel">
+        <div class="panel-heading">Wee Nibble Beer</div>
+        <div class="panel-body"><img src="https://cdn.shopify.com/s/files/1/0277/5606/8936/products/Untitleddesign_16_540x.png?v=1622580807" class="img-responsive" style="width:400px;height:400px" alt="Image"></div>
+        <div class="panel-footer"> <div> 200 pesos c/u </div> <button id="5" onClick="reply_click(this.id)"  class="submit" type="button"> Añadir a carrito </button> </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel">
+        <div class="panel-heading">Beltzburg Pink Beer</div>
+        <div class="panel-body"><img src="https://souriredessaveurs.com/4780-large_default/belzebuth-pink-blanche-beer-with-french-frarmboise-28-33-cl.jpg" class="img-responsive" style="width:400px;height:400px" alt="Image"></div>
+        <div class="panel-footer"> <div> 120 pesos c/u </div> <button id="6" onClick="reply_click(this.id)"  type="button"> Añadir a carrito </button> </div>  
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+<script>
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+var costo_total = 0;
+
+// When the user clicks the button, open the modal 
+function reply_click(clicked_id) {
+  modal.style.display = "block";
+  var costo=0;
+  var cant = document.getElementById("cant").value;
+  if(clicked_id="1"){
+    costo=130;}
+
+  if(clicked_id="2"){
+    costo=78;}
+
+  if(clicked_id="3"){
+    costo=75;}
+
+  if(clicked_id="4"){
+    costo=150;}
+
+  if(clicked_id="5"){
+    costo=200;}
+
+  if(clicked_id="6"){
+    costo=120;}
+  costo_total = cant*costo;
+  document.getElementById("cant").value = 1;
+
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+
+  }
+}
+
+//MODAL 2
+
+var modal2 = document.getElementById("myModal2");
+var span2 = document.getElementsByClassName("close2")[0];
+var btn = document.getElementById("carrito");
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal2.style.display = "block";
+  document.getElementById("resultado").innerHTML = costo_total;
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+  modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+
+
+  }
+}
+
+
+</script>
+</body>
+</html>
