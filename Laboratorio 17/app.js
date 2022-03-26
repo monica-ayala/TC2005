@@ -1,0 +1,56 @@
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const path = require('path');
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({extended: false}));
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+app.use(session({
+    secret: "un secreto shh",
+    resave: false,
+    saveUninitialized:false,
+}))
+
+const scienceruta = require('./routes/science.routes');
+const mathruta = require('./routes/math.routes');
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+
+
+app.use('/science', scienceruta);
+app.use('/math', mathruta);
+
+
+
+
+app.use('/ruta1', (request, response, next) => {
+    console.log('Respuesta de la ruta "/ruta1"');
+    response.send('Respuesta de la ruta "/ruta1"'); 
+});
+    
+app.use('/ruta2', (request, response, next) => {
+    console.log('Respuesta de la ruta "/ruta2"');
+    response.send('Respuesta de la ruta "/ruta2"'); 
+});
+    
+app.use('/ruta3', (request, response, next) => {
+    console.log('Respuesta de la ruta "/ruta3"');
+    response.send('Respuesta de la ruta "/ruta3"'); 
+});
+    
+app.use((request, response, next) => {
+    console.log('respuesta a ruta no existente');
+    response.status(404)
+    response.send('Error 404. No existe esa Ruta.');
+});
+
+
+app.listen(3000);
+
+

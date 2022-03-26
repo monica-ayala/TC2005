@@ -1,0 +1,30 @@
+<%- include('includes/head.ejs') %>
+    <h1> Este es el body de la gran página de mate </h1>
+    <main>
+        <p>Aquí tenemos las siguientes funciones trigonométricas :</p>
+        <div class="row">
+        <% if (math.length > 0) { %>
+                <% for (let item of math) { %>
+                    <div class="col s12 m4 l3">
+                        <div class="card small">
+                            <div class="card-image waves-effect waves-block waves-light">
+                            </div>
+                            <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4"><%= item.Function %><i class="material-icons right">more_vert</i></span>
+                            <p><a href="#">This is a link</a></p>
+                            </div>
+                            <div class="card-reveal green lighten-1">
+                            <span class="card-title grey-text text-darken-4"><%= item.Function %><i class="material-icons right">close</i></span>
+                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+        <% } else { %>
+            <h3> jiji no hay </h3>
+        <% } %>   
+        </div>
+        <a href="/math/nuevo">
+            <i class="material-icons">add</i> Agregar nueva función</a>
+    </main>
+<%- include('includes/foot.ejs') %>
