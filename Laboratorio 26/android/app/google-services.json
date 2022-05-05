@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "975571153466",
+    "project_id": "yolotl-1ecd1",
+    "storage_bucket": "yolotl-1ecd1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975571153466:android:2f2444cecea452e0f13b03",
+        "android_client_info": {
+          "package_name": "com.hackathon.yolotl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975571153466-46uhjl2ltrhejb5ibjjsg79ft9tsva33.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackathon.yolotl",
+            "certificate_hash": "253b30b085b8eb911c1eeea9d1b8e516704da0fa"
+          }
+        },
+        {
+          "client_id": "975571153466-cc0le9shvit4llbpqdm8qd7hsr0uf8c2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx1HZFyiS-DjWs9-mfWLxczp8kINC6iqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975571153466-cc0le9shvit4llbpqdm8qd7hsr0uf8c2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
