@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<style>
+  /* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 400px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<body>
+
+<div class="row">
+  <div class="column" style="text-align: center; padding-top: 100px;padding-bottom: 100px">
+    <div>
+      METAMATERIALS LAB: Discretizar una función
+      <p style = "text-align: left;padding-left: 20px;">
+        En function se puede modificar la función, ejemplo, escribiendo: "Math.cos(x)", "3*Math.sin(x)", "4*x+1" <br>
+        En los sliders se puede modificar hasta que x se quiere la gráfica y el tamaño del step en la iteración <br>
+        En obtener puntos se obtienen ambos vectores: vector y, vector x. <br>
+        Con los botones de abajo en cada uno respectivo se puede copiar a la papelera cada vectir respectivo <br>
+
+      </p>
+    </div>
+  </div>
+
+  <div class="column" style="max-width:500px">
+    <div class="row">
+        <p> Parametrizar la curva </p>
+        <div class="col"> <label for="function">Función: </label> <input type="text" id="function" name="function" value="Math.sin(x)"> </div>
+        <div class="col"> <label for="precision"> # Puntos por Periodo </label> <input type="number" id="precision" name="precision" value="20"> </div>
+    </div>
+    <div class="row">
+        <p> Parametrizar la malla </p>
+        <div class="col"> <label for="amplitude"> Distancia entre funciones </label> <input type="number" id="amplitude" name="amplitude" value="2"> </div>
+    </div>
+    <div class="row">
+        <p> Parametrizar modelo 3D </p>
+        <div class="col"> <label for="x_length"> Longitud en x (num de periodos) </label> <input type="number" id="x_length" name="x_length" value="4"> </div>
+        <div class="col"> <label for="y_length"> Longitud en y (num de periodos) </label> <input type="number" id="y_length" name="y_length" value="4"> </div>
+        <div class="col"> Longitud en z (mm)(sinusoidales)(calculables?)</div>
+        <div class="col"> <label for="layers"> Cantidad de capas </label> <input type="number" id="layers" name="layers" value="20"> </div>
+        <div class="col"> <label for="separation"> Separación de capas (mm) </label> <input type="number" id="separation" name="separation" value="1"> </div>
+        <div class="col"> Footer (Editable)</div>
+        <div class="col"> Header (Editable)</div>
+        <div class="col"> <label for="scale"> Escala </label> <input type="number" id="scale" name="scale" value="1"> </div>
+        <div class="col"> <label for="extrusion"> Extrusion </label> <input type="number" id="extrusion" name="extrusion" value="0.5"> </div>
+        <button onclick="download_code()">Descargar código</button>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="column">
+      <!-- <canvas id="myChart" style="width:50%;max-width:600px"></canvas> -->
+  </div>
+
+  <div class="column">
+    <!-- <canvas id="myChart2" style="width:50%;max-width:600px"></canvas> -->
+  </div>
+
+</div>
+
+<script>
+// VARIABLES 
+let func = document.getElementById("function").value;
+let pres = document.getElementById("precision").value;
+let dist = document.getElementById("amplitude").value;
+let x_len = document.getElementById("x_length").value
+let y_len = document.getElementById("y_length").value
+let layers = 4 //document.getElementById("layers").value;
+let s = document.getElementById("separation").value;
+let scale = document.getElementById("scale").value;
+let E = document.getElementById("extrusion").value;
+E = Number(E)
+var yValues = [];  //AQUI VAN LOS DATOS DEL VECTOR Y
+var xValues = [];  //AQUI VAN LOS DATOS DEL VECTOR X
+var header = "header :)"
+var footer = "footer :)"
+var step = 0.5 //calcular con pres
+var dataMatrix = [];
+
+generateData(xValues,yValues,func,0,x_len,step);
+generateMesh(dataMatrix);
+console.log(dataMatrix);
+download_code();
+
+//AQUI PARAMETRIZAS DONDE INICIA, DONDE TERMINA, EL STEP (PUNTOS POR PERIODO)
+function generateData(xVector, yVector, value, i1, i2, step = 1) { 
+  for (let x = i1; x <= i2; x += step) {
+    yVector.push(eval(value));
+    xVector.push(x);
+  }
+}
+
+function generateMesh(Matrix){
+  let xLines = 4 //AQUI HAY QUE CALCULAR CON EL YLENGHT 
+  for(let i=0;i<xLines;i++){
+    Matrix.push(yValues.map(num=>{return num+dist*(i+1)}))
+  }
+}
+
+function generateCode(){
+  var aux = "";
+  let xLines = 4 //AQUI HAY QUE CALCULAR CON EL YLENGTH
+  var points = 9 //AQUI HAY QUE CALCULAR CON EL XLENGTH y STEP CUANTOS PUNTOS
+  for (let i=0;i<layers;i++){
+    for(let j=0;j<xLines;j++){
+      for(let k=0;k<points;k++){
+        aux = aux + 'G1 X'+k+' Y'+dataMatrix[j][k]+ ' E'+E+'\n';
+        E = E + 1;
+      }
+      //linea para el salto de linea
+    }
+    //linea para cada layer 
+  }
+  return aux;
+}
+
+function calc_distance(x,x2,y,y2){ //FUNCION AUXILIAR PARA HACER LA EXTRUSION EN FUNCION DE LA DISTANCIA
+
+  res = Math.sqrt((x-x2)*(x-x2) + (y-y2)*(y-y2));
+  return res;
+}
+
+function download_code(){
+    var aux = generateCode();
+    textToSave = header;
+    textToSave = textToSave + aux;
+    textToSave = textToSave + footer
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'myFile.txt';
+    hiddenElement.click();
+  }
+</script>
+
+</body>
+</html>
